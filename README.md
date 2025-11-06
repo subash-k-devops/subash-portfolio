@@ -2,7 +2,6 @@
 
 ![Built With](https://img.shields.io/badge/Built%20With-HTML5%20%7C%20CSS3%20%7C%20JavaScript-blue?style=flat-square)  
 ![Deployed On](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-181717?style=flat-square&logo=github)  
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)  
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
 > 🚀 A modern, responsive **portfolio website** showcasing my journey as an **AWS DevOps Engineer**, detailing my professional experience, transition from supply chain to cloud & DevOps, skills, certifications, and projects — all built with HTML, CSS, JavaScript and hosted via GitHub Pages.
@@ -55,6 +54,7 @@ subash-portfolio/
 │
 └── README.md             # Project documentation
 ```
+
 
 ## 💼 My Story & Learning Journey
 
