@@ -1,91 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Subash Kalaiselvan - Resume</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-
-    h1 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
-    }
-
-    h2 {
-      color: #3498db;
-      margin-top: 30px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .highlight {
-      color: #e74c3c;
-      font-weight: bold;
-    }
-
-    .info {
-      background-color: #ecf0f1;
-      padding: 10px;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subash Kalaiselvan - Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font-family: 'Poppins', sans-serif; line-height: 1.8; color: #4a4a4a; overflow-x: hidden;}
+        .container {max-width: 1140px; margin: 0 auto; padding: 0 15px;}
+        nav {position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 20px 0;}
+        nav .container {display: flex; justify-content: space-between; align-items: center;}
+        .logo {font-size: 1.5rem; font-weight: 700; color: #0072ff;}
+        .nav-links {display: flex; list-style: none; gap: 30px;}
+        .nav-links a {text-decoration: none; color: #4a4a4a; font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover {color: #0072ff;}
+        .hero {min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);}
+        .hero-content {display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;}
+        .hero-text h2 {font-size: 1.2rem; color: #0072ff; font-weight: 500; margin-bottom: 10px;}
+        .hero-text h1 {font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; color: #2d3748; line-height: 1.2;}
+        .hero-text .role {font-size: 2rem; color: #0072ff; margin-bottom: 30px; font-weight: 600;}
+        .hero-text p {font-size: 1.1rem; margin-bottom: 30px; color: #666;}
+        .hero-buttons {display: flex; gap: 20px;}
+        .btn {display: inline-block; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; font-size: 1rem;}
+        .btn-primary {background: #0072ff; color: white; box-shadow: 0 10px 30px rgba(0, 114, 255, 0.3);}
+        .btn-primary:hover {background: #0056cc; transform: translateY(-2px); box-shadow: 0 15px 40px rgba(0, 114, 255, 0.4);}
+        .btn-outline {background: transparent; color: #0072ff; border: 2px solid #0072ff;}
+        .btn-outline:hover {background: #0072ff; color: white;}
+        .hero-image {text-align: center;}
+        .profile-img {width: 400px; height: 400px; border-radius: 50%; object-fit: cover; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border: 8px solid white;}
+        .about-section {padding: 100px 0; background: white;}
+        .section-header {text-align: center; margin-bottom: 60px;}
+        .section-subtitle {color: #0072ff; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;}
+        .section-title {font-size: 2.5rem; color: #2d3748; font-weight: 700;}
+        .about-content {display: grid; grid-template-columns: 2fr 1fr; gap: 60px;}
+        .about-text {font-size: 1.05rem; line-height: 1.9; color: #666;}
+        .about-text p {margin-bottom: 20px;}
+        .info-box {background: #f8f9fa; padding: 40px; border-radius: 15px; border-left: 4px solid #0072ff;}
+        .info-item {margin-bottom: 20px; display: flex; flex-direction: column;}
+        .info-item:last-child {margin-bottom: 0;}
+        .info-label {font-size: 0.9rem; color: #999; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;}
+        .info-value {font-size: 1.1rem; color: #2d3748; font-weight: 600;}
+        .objective-section {padding: 80px 0; background: #f8f9fa;}
+        .objective-content {max-width: 900px; margin: 0 auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #0072ff;}
+        .objective-content p {font-size: 1.15rem; line-height: 1.9; color: #666; text-align: justify;}
+        .education-section {padding: 100px 0; background: white;}
+        .education-card {max-width: 900px; margin: 0 auto; background: #f8f9fa; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #0072ff; transition: transform 0.3s;}
+        .education-card:hover {transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12);}
+        .education-degree {font-size: 1.5rem; color: #2d3748; font-weight: 600; margin-bottom: 10px;}
+        .education-institution {color: #0072ff; font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;}
+        .education-year {color: #999; font-size: 1rem; margin-bottom: 20px;}
+        .education-description {color: #666; font-size: 1.05rem; line-height: 1.9;}
+        .skills-section {padding: 100px 0; background: #f8f9fa;}
+        .skills-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto;}
+        .skill-card {background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s;}
+        .skill-card:hover {transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12);}
+        .skill-category {color: #0072ff; font-size: 1.1rem; font-weight: 600; margin-bottom: 15px;}
+        .skill-list {list-style: none; padding: 0;}
+        .skill-list li {color: #666; font-size: 0.95rem; padding: 8px 0; border-bottom: 1px solid #f0f0f0;}
+        .skill-list li:last-child {border-bottom: none;}
+        .skill-list li:before {content: "▹ "; color: #0072ff; font-weight: bold; margin-right: 8px;}
+        .timeline-section {padding: 100px 0; background: white;}
+        .experience-badge {text-align: center; margin-bottom: 50px;}
+        .experience-badge-content {display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 50px; border-radius: 50px; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);}
+        .experience-badge h3 {font-size: 2rem; font-weight: 700; margin: 0;}
+        .experience-badge p {margin: 5px 0 0 0; opacity: 0.9; font-size: 1rem;}
+        .timeline-wrapper {max-width: 900px; margin: 0 auto; position: relative;}
+        .timeline-wrapper::before {content: ''; position: absolute; left: 30px; top: 0; bottom: 0; width: 3px; background: #0072ff;}
+        .timeline-item {position: relative; padding-left: 80px; margin-bottom: 50px;}
+        .timeline-dot {position: absolute; left: 20px; top: 5px; width: 23px; height: 23px; background: #0072ff; border-radius: 50%; border: 4px solid white; z-index: 1;}
+        .timeline-card {background: #f8f9fa; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s;}
+        .timeline-card:hover {transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12);}
+        .timeline-date {color: #0072ff; font-weight: 600; margin-bottom: 10px; font-size: 0.95rem;}
+        .timeline-role {font-size: 1.3rem; font-weight: 600; color: #2d3748; margin-bottom: 5px;}
+        .timeline-company {color: #999; font-size: 1rem; margin-bottom: 15px;}
+        .timeline-description {color: #666; line-height: 1.8;}
+        .timeline-description ul {margin-top: 15px; padding-left: 20px;}
+        .timeline-description li {margin-bottom: 8px;}
+        .certifications-section {padding: 100px 0; background: #f8f9fa;}
+        .cert-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto;}
+        .cert-card {background: white; padding: 35px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s; border-left: 4px solid #0072ff;}
+        .cert-card:hover {transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12);}
+        .cert-title {font-size: 1.3rem; color: #2d3748; font-weight: 600; margin-bottom: 10px;}
+        .cert-provider {color: #0072ff; font-size: 1rem; margin-bottom: 15px; font-weight: 500;}
+        .cert-link {display: inline-block; color: #0072ff; text-decoration: none; font-weight: 500; margin-top: 10px; transition: color 0.3s;}
+        .cert-link:hover {color: #0056cc; text-decoration: underline;}
+        .projects-section {padding: 100px 0; background: white;}
+        .projects-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;}
+        .project-card {background: #f8f9fa; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;}
+        .project-card:hover {transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15);}
+        .project-image {height: 220px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 600;}
+        .project-content {padding: 25px; background: white;}
+        .project-title {font-size: 1.3rem; color: #2d3748; font-weight: 600; margin-bottom: 12px;}
+        .project-description {color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px;}
+        .project-link {display: inline-block; color: #0072ff; text-decoration: none; font-weight: 500; transition: color 0.3s; margin-right: 15px;}
+        .project-link:hover {color: #0056cc;}
+        .contact-section {padding: 100px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;}
+        .contact-section .section-subtitle {color: rgba(255,255,255,0.9);}
+        .contact-section .section-title {color: white;}
+        .contact-intro {text-align: center; max-width: 700px; margin: 0 auto 60px; font-size: 1.1rem; opacity: 0.95;}
+        .contact-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;}
+        .contact-item {text-align: center; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);}
+        .contact-item a {color: white; text-decoration: none; transition: opacity 0.3s;}
+        .contact-item a:hover {opacity: 0.8;}
+        .contact-icon {font-size: 2.5rem; margin-bottom: 15px;}
+        .contact-label {font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;}
+        .contact-value {opacity: 0.9; font-size: 1rem;}
+        footer {background: #2d3748; color: white; text-align: center; padding: 30px 0;}
+        footer p {margin: 0; opacity: 0.8;}
+        @media (max-width: 768px) {
+            .hero-content, .about-content, .contact-grid {grid-template-columns: 1fr;}
+            .projects-grid, .cert-grid, .skills-grid {grid-template-columns: 1fr;}
+            .hero-text h1 {font-size: 2.5rem;}
+            .hero-text .role {font-size: 1.5rem;}
+            .profile-img {width: 300px; height: 300px;}
+            .nav-links {gap: 15px; font-size: 0.9rem;}
+            .timeline-wrapper::before {left: 10px;}
+            .timeline-dot {left: 0;}
+            .timeline-item {padding-left: 50px;}
+            .objective-content, .education-card {padding: 30px;}
+        }
+        html {scroll-behavior: smooth;}
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Subash Kalaiselvan</h1>
-    <div class="info">
-      <p><strong>Target Role:</strong> DevOps Engineer</p>
-      <p><strong>Location:</strong> Coimbatore, Tamil Nadu</p>
-    </div>
+    <nav>
+        <div class="container">
+            <div class="logo">SUBASH K</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="section">
-      <h2>Summary</h2>
-      <p>Mechanical Engineering Diploma holder with 4 years of SCM experience, transitioning into AWS DevOps with hands-on learning in <span class="highlight">GitLab CI/CD</span>.</p>
-    </div>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Hi, I'm</h2>
+                    <h1>SUBASH KALAISELVAN</h1>
+                    <div class="role">AWS DEVOPS ENGINEER</div>
+                    <p>Transitioning from Supply Chain Management to AWS DevOps, leveraging automation expertise and cloud computing skills to deliver scalable and efficient infrastructure solutions.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img class="profile-img" src="profile.jpg" alt="Subash Kalaiselvan">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>GitLab CI/CD</li>
-        <li>Power BI</li>
-        <li>Supply Chain Management</li>
-      </ul>
-    </div>
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">About Me</div>
+                <h2 class="section-title">Know Me More</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am currently working as Associate II at Capgemini in the Supply Chain Management domain as a Procurement Buyer. In this role, I manage end-to-end procurement processes, including RFQs, PO placements, vendor collaboration, and cost optimization.</p>
+                    <p>My strong analytical and process automation mindset has inspired me to transition into AWS DevOps, where I can apply my technical and operational expertise to cloud-based automation and CI/CD workflows. I am passionate about leveraging technology to streamline processes and improve efficiency.</p>
+                    <p>Through continuous learning and hands-on projects, I have developed skills in AWS cloud services, GitLab CI/CD, automation tools, and infrastructure management. I am excited to bring my unique blend of operational experience and technical skills to the DevOps field.</p>
+                </div>
+                <div>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">Subash Kalaiselvan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Current Role:</span>
+                            <span class="info-value">Associate II - Capgemini</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Domain:</span>
+                            <span class="info-value">Procurement & Supply Chain</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Transitioning To:</span>
+                            <span class="info-value">AWS DevOps Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>Experience</h2>
-      <p><strong>Company:</strong> Capgemini</p>
-      <p><strong>Role:</strong> Associate II</p>
-      <p><strong>Domain:</strong> Supply Chain Management &ndash; Procurement Buyer</p>
-      <p><strong>Location:</strong> Coimbatore</p>
-    </div>
+    <section class="objective-section" id="objective">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Career Goal</div>
+                <h2 class="section-title">My Objective</h2>
+            </div>
+            <div class="objective-content">
+                <p>To secure a position as an AWS DevOps Engineer where I can leverage my skills in automation, cloud computing, and continuous integration to deliver scalable, efficient, and secure infrastructure solutions.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>Education</h2>
-      <p>Diploma in Mechanical Engineering</p>
-    </div>
-  </div>
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Academic Background</div>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-card">
+                <h3 class="education-degree">Diploma in Mechanical Engineering</h3>
+                <p class="education-institution">Alagappa Polytechnic College</p>
+                <p class="education-year">2016 – 2019</p>
+                <p class="education-description">Gained a solid foundation in mechanical principles, design analysis, and practical engineering applications. The program emphasized problem-solving, technical accuracy, and teamwork, helping develop a structured and analytical mindset for real-world challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Technical Expertise</div>
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4 class="skill-category">☁️ Cloud & Version Control</h4>
+                    <ul class="skill-list">
+                        <li>Cloud Computing (AWS)</li>
+                        <li>Version Control (Git, GitHub, GitLab)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4 class="skill-category">🐧 System & Containers</h4>
+                    <ul class="skill-list">
+                        <li>Linux Administration</li>
+                        <li>Containerization (Docker)</li>
+                        <li>Orchestration (Kubernetes)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4 class="skill-category">⚙️ Infrastructure as Code</h4>
+                    <ul class="skill-list">
+                        <li>Terraform</li>
+                        <li>Configuration Management (Ansible)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4 class="skill-category">🚀 CI/CD & Monitoring</h4>
+                    <ul class="skill-list">
+                        <li>GitLab CI/CD</li>
+                        <li>ArgoCD</li>
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>SonarQube</li>
+                        <li>Shell Scripting (Bash)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Experience</div>
+                <h2 class="section-title">My Professional Journey</h2>
+            </div>
+            <div class="experience-badge">
+                <div class="experience-badge-content">
+                    <h3>4 Years</h3>
+                    <p>Professional Experience</p>
+                </div>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Present</div>
+                        <h3 class="timeline-role">Associate II</h3>
+                        <p class="timeline-company">Capgemini</p>
+                        <p class="timeline-description"><strong>Procurement Buyer | Supply Chain Management</strong></p>
+                        <ul class="timeline-description">
+                            <li>Manage end-to-end procurement process including RFQs and POs</li>
+                            <li>Drive cost reductions and streamline workflows for improved efficiency</li>
+                            <li>Collaborate with vendors to ensure quality and timely deliveries</li>
+                            <li>Engage in automation initiatives and data-driven process improvements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Achievements</div>
+                <h2 class="section-title">Certifications & Learning</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
+                    <p class="cert-provider">Coursera</p>
+                    <p style="color: #666; font-size: 0.95rem;">Comprehensive foundation in AWS cloud services, architecture, security, and cloud economics.</p>
+                    <a href="https://coursera.org/verify/E198SIM3VINT" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+                <div class="cert-card">
+                    <h3 class="cert-title">Microsoft Power BI</h3>
+                    <p class="cert-provider">Udemy</p>
+                    <p style="color: #666; font-size: 0.95rem;">Advanced data visualization and business intelligence skills for data-driven decision making.</p>
+                    <a href="https://www.udemy.com/certificate/UC-8c459335-205a-4411-b39f-6b84694734b5/" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Portfolio</div>
+                <h2 class="section-title">My Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">GitLab CI/CD</div>
+                    <div class="project-content">
+                        <h3 class="project-title">GitLab Pipeline 2025</h3>
+                        <p class="project-description">Developed and maintained a GitLab CI/CD pipeline to automate code testing, integration, and deployment. Focused on improving build reliability and reducing manual intervention in cloud workflows.</p>
+                        <a href="https://gitlab.com/Subash-2025/subash-clickops-gitlab-pipeline-2025" target="_blank" class="project-link">View on GitLab →</a>
+                        <a href="https://github.com/subash-k-devops" target="_blank" class="project-link">GitHub Profile →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Get In Touch</div>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <p class="contact-intro">I'm excited to discuss opportunities in AWS DevOps, automation projects, or collaboration possibilities. Feel free to reach out!</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h4 class="contact-label">Location</h4>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Coimbatore+Tamil+Nadu+India" target="_blank">
+                        <p class="contact-value">Coimbatore, Tamil Nadu</p>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h4 class="contact-label">Email</h4>
+                    <a href="mailto:subash042001k.s@gmail.com">
+                        <p class="contact-value">subash042001k.s@gmail.com</p>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h4 class="contact-label">Phone</h4>
+                    <a href="tel:+919344337509">
+                        <p class="contact-value">+91 9344337509</p>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h4 class="contact-label">LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/subash-kalaiselvan" target="_blank">
+                        <p class="contact-value">Connect with me</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Subash Kalaiselvan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
